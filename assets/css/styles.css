@@ -652,6 +652,7 @@ body.dark-theme {
 
   .home__img {
     width: 300px;
+    transform: translateY(60px);
   }
 
   .home__arrow,

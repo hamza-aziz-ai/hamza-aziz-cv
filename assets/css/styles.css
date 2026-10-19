@@ -64,7 +64,7 @@ body {
   transition: background-color .4s, color .4s;
 }
 
-.resume {
+.cv {
   background-color: var(--container-color);
   transition: background-color .4s;
 }
@@ -161,20 +161,20 @@ body.dark-theme {
   padding-bottom: .75rem;
 }
 
-/*=============== RESUME ===============*/
-.resume__title {
+/*=============== CV ===============*/
+.cv__title {
   font-size: var(--normal-font-size);
   display: inline-flex;
   align-items: center;
   margin-bottom: 0.25rem;
 }
 
-.resume__title i {
+.cv__title i {
   font-size: 1.5rem;
   font-weight: initial;
 }
 
-.resume__data {
+.cv__data {
   display: grid;
   row-gap: 0.5rem;
   padding-left: 1.5rem;
@@ -182,7 +182,7 @@ body.dark-theme {
   min-width: 0;
 }
 
-.resume__button-link {
+.cv__button-link {
   width: max-content;
   color: var(--text-color);
   /* display: inline-flex; */
@@ -190,7 +190,7 @@ body.dark-theme {
   font-weight: var(--font-semi-bold);
 }
 
-.resume__button-link:hover {
+.cv__button-link:hover {
   color: var(--first-color);
 }
 
@@ -426,13 +426,13 @@ body.dark-theme {
 
 .projects__container,
 .projects__container > div,
-.projects__container .resume__title,
-.projects__container .resume__data p {
+.projects__container .cv__title,
+.projects__container .cv__data p {
   min-width: 0;
 }
 
-.projects__container .resume__title,
-.projects__container .resume__data p {
+.projects__container .cv__title,
+.projects__container .cv__data p {
   overflow-wrap: anywhere;
 }
 
@@ -577,13 +577,13 @@ body.dark-theme {
     margin: 0 0 2rem;
   }
 
-  .resume__main {
+  .cv__main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .resume__left,
-  .resume__right {
+  .cv__left,
+  .cv__right {
     padding-inline: 1.5rem;
     min-width: 0;
   }
@@ -616,7 +616,7 @@ body.dark-theme {
 
 /* For large devices */
 @media screen and (min-width: 1024px) {
-  .resume__main {
+  .cv__main {
     grid-template-columns: 376px 1fr;
   }
 
@@ -669,12 +669,12 @@ body.dark-theme {
     margin-block: 3rem;
   }
 
-  .resume {
+  .cv {
     box-shadow: 0 0 48px hsla(40, 48%, 12%, 0.25);
     margin-inline: auto;
   }
 
-  .dark-theme .resume {
+  .dark-theme .cv {
     box-shadow: 0 0 48px hsla(40, 48%, 4%, 0.4);
   }
 }

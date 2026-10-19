@@ -331,8 +331,19 @@ body.dark-theme {
 }
 
 .home__info {
+  justify-self: center;
   margin-top: 1rem;
+  padding: .75rem 1rem;
+  border-left: 3px solid var(--first-color);
+  background: linear-gradient(90deg, hsla(14, 98%, 50%, .09), transparent);
+  color: var(--title-color);
   font-size: var(--small-font-size);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.home__info strong {
+  font-weight: var(--font-semi-bold);
 }
 
 .home__blob {

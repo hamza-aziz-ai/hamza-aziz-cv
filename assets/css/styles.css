@@ -365,8 +365,8 @@ body.dark-theme {
 }
 
 .home__img {
-  width: 205px;
-  transform: translateY(20px);
+  width: 280px;
+  transform: translateY(50px);
 }
 
 .home__arrow,
@@ -651,7 +651,7 @@ body.dark-theme {
   }
 
   .home__img {
-    width: 245px;
+    width: 300px;
   }
 
   .home__arrow,

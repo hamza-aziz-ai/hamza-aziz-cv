@@ -90,6 +90,8 @@ img {
 
 /*=============== THEME ===============*/
 .change-theme {
+  background: none;
+  border: 0;
   font-size: 1.25rem;
   color: var(--title-color);
   cursor: pointer;
@@ -319,6 +321,7 @@ body.dark-theme {
 }
 
 .home__profession {
+  color: var(--title-color);
   text-shadow: none;
   margin-top: 1.5rem;
 }

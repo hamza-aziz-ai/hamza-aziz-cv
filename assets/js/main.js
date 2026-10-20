@@ -57,3 +57,14 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*=============== GA4: CV DOWNLOAD EVENT ===============*/
+// Any link to the CV PDF (local or root copy) counts; marksheet PDFs do not.
+// Guarded so the page still works when analytics is blocked.
+document.addEventListener('click', e => {
+    const a = e.target.closest('a[href]')
+    if (!a || typeof gtag !== 'function') return
+    let u
+    try { u = new URL(a.href, location.href) } catch { return }
+    if (u.pathname.endsWith('/Hamza_Aziz_CV_UAE.pdf')) gtag('event', 'cv_download', { link_location: 'cv_page' })
+})

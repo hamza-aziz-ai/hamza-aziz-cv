@@ -154,7 +154,7 @@
 
                   <div class="about__container grid">
                      <p>
-                        AI Engineer with 3+ years of experience in Computer Vision, Conversational/Generative AI, full-stack LLM applications, and applied MLOps. Built production face recognition attendance systems (CCTV, PTZ classroom and edge variants) covering 20+ live CCTV streams with Kafka event streaming, on TensorRT + Milvus with automated nightly gallery updates. Currently maintaining a real-time, multi-tenant DriveThru voice ordering platform on FastAPI + Socket.IO over Google Gemini (2.63 s median reply over 17,884 turns, 4 POS integrations), alongside an earlier Rasa + Gemini voice-to-SQL assistant for a college ERP. Comfortable shipping LLM applications end-to-end &mdash; FastAPI + Next.js services with rule-based and optional LLM narrators over OpenAI-compatible endpoints. Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments. Seeking applied AI engineering roles in Abu Dhabi or Dubai.
+                        AI Engineer with 3+ years of experience in Computer Vision, Conversational/Generative AI, full-stack LLM applications, and applied MLOps. Built production face recognition attendance systems (CCTV, PTZ classroom and edge variants) covering 20+ live CCTV streams with Kafka event streaming, on TensorRT + Milvus with automated nightly gallery updates. Currently maintaining a real-time, multi-tenant DriveThru voice ordering platform on FastAPI + Socket.IO over Google Gemini (2.63 s median reply over 17,884 turns, 4 POS integrations), alongside an earlier Rasa + Gemini voice assistant for a multi-institute college ERP. Comfortable shipping LLM applications end-to-end &mdash; FastAPI + Next.js services with rule-based and optional LLM narrators over OpenAI-compatible endpoints. Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments. Seeking applied AI engineering roles in Abu Dhabi or Dubai.
                      </p>
 
                      <ul class="about__social">
@@ -414,10 +414,10 @@
                         </h3>
 
                         <div class="cv__data">
-                           <span>Global Infoventures Pvt. Ltd. | Aug 2023 - August 2025</span>
+                           <span>Global InfoVentures Pvt. Ltd. | Aug 2023 - August 2025</span>
 
                            <p>
-                              Built a CCTV face recognition attendance application on InsightFace-REST (SCRFD, w600k_r50) + Milvus, achieving &gt;99.99% accuracy against the attendance register in library-gate UAT, and delivered 4 CCTV, PTZ and edge variants. Processed 20+ live CCTV streams for a main-gate deployment with ~2,000 average daily footfall; nightly staging-gallery updates raised real-world accuracy from 85% to 99%, and combined mobile + CCTV datasets improved cross-domain recognition by 14%. Built a voice-to-SQL ERP assistant (Rasa, Gemini, Milvus) with near-100% intent classification accuracy and 30%+ / 40%+ SQL precision gains.
+                              Built a CCTV face recognition attendance application on InsightFace-REST (SCRFD, w600k_r50) + Milvus, achieving &gt;99.99% accuracy against the attendance register in library-gate UAT, and delivered 4 CCTV, PTZ and edge variants. Processed 20+ live CCTV streams for a main-gate deployment with ~2,000 average daily footfall; nightly staging-gallery updates raised real-world accuracy from 85% to 99%, and combined mobile + CCTV datasets improved cross-domain recognition by 14%. Built a voice ERP assistant (Rasa, Gemini, Milvus) in which Gemini emits query fields and conditions for application-built ERP payloads rather than full SQL, with near-100% intent classification accuracy and 30%+ / 40%+ SQL precision gains.
                            </p>
                         </div>
                      </div>
@@ -428,7 +428,7 @@
                         </h3>
                      
                         <div class="cv__data">
-                           <span>Global Infoventures Pvt. Ltd. | Feb 2023 - Jul 2023</span>
+                           <span>Global InfoVentures Pvt. Ltd. | Feb 2023 - Jul 2023</span>
                      
                            <p>
                               Delivered 10+ AI/ML training sessions, mentored 50+ students across CSE, AIML and Data Science, and guided 10+ YOLOv8/CNN object-detection projects through deployment.
@@ -491,14 +491,14 @@
 
                      <div>
                         <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> Voice Assistant for College ERP (Natural Language to SQL)
+                           <i class="ri-arrow-drop-right-line"></i> Voice Assistant for College ERP (Natural Language to ERP Queries)
                         </h3>
 
                         <div class="cv__data">
                            <span>Global InfoVentures Pvt. Ltd.</span>
 
                            <p>
-                              Built a voice and text query assistant that answers natural-language questions over a multi-institute college ERP. A FastAPI backend transcribes speech via Google Speech-to-Text, routes queries to student, fee, employee or library modules with two Rasa DIET classifiers, and asks a clarifying question when confidence is low. Schema fields (100+ field-level mappings per module) and few-shot examples are retrieved from Milvus using MiniLM embeddings, improving SQL precision by 30%+, with vector-based field/value disambiguation adding 40%+. Gemini generates SQL for the ERP to execute and summarizes results into gTTS speech; near-100% intent classification accuracy.
+                              Built a voice and text query assistant that answers natural-language questions over a multi-institute college ERP. A FastAPI backend transcribes speech via Google Speech-to-Text, routes queries to student, fee, employee or library modules with two Rasa DIET classifiers, and asks a clarifying question when confidence is low. Schema fields (100+ field-level mappings per module) and few-shot examples are retrieved from Milvus using MiniLM embeddings, improving SQL precision by 30%+, with vector-based field/value disambiguation adding 40%+. Gemini emits the query fields and conditions, the application builds the ERP payload rather than full SQL, and results are summarized into gTTS speech; near-100% intent classification accuracy.
                            </p>
                         </div>
                      </div>

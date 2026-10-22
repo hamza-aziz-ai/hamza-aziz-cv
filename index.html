@@ -417,7 +417,7 @@
                            <span>Global InfoVentures Pvt. Ltd. | Aug 2023 - August 2025</span>
 
                            <p>
-                              Built a CCTV face recognition attendance application on InsightFace-REST (SCRFD, w600k_r50) + Milvus, achieving &gt;99.99% accuracy against the attendance register in library-gate UAT, and delivered 4 CCTV, PTZ and edge variants. Processed 20+ live CCTV streams for a main-gate deployment with ~2,000 average daily footfall; nightly staging-gallery updates raised real-world accuracy from 85% to 99%, and combined mobile + CCTV datasets improved cross-domain recognition by 14%. Built a voice ERP assistant (Rasa, Gemini, Milvus) in which Gemini emits query fields and conditions for application-built ERP payloads rather than full SQL, with near-100% intent classification accuracy and 30%+ / 40%+ SQL precision gains.
+                              Built a CCTV face recognition attendance application on InsightFace-REST (SCRFD, w600k_r50) + Milvus, achieving &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates, and delivered 4 CCTV, PTZ and edge variants. Processed 20+ live CCTV streams for a main-gate deployment with ~2,000 average daily footfall; nightly staging-gallery updates raised real-world accuracy from 85% to 99%, and combined mobile + CCTV datasets improved cross-domain recognition by 14%. Built a voice ERP assistant (Rasa, Gemini, Milvus) in which Gemini emits query fields and conditions for application-built ERP payloads rather than full SQL, with near-100% intent classification accuracy and 30%+ / 40%+ SQL precision gains.
                            </p>
                         </div>
                      </div>
@@ -512,7 +512,7 @@
                            <span>Global InfoVentures Pvt. Ltd.</span>
 
                            <p>
-                              Real-time attendance across 20+ live CCTV streams on an NVIDIA DGX A100 using MIG partitions; &gt;99.99% accuracy against the attendance register in library-gate UAT. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift. A collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. Also: PostgreSQL, FastAPI, Kafka feedback, DVC-versioned datasets.
+                              Real-time attendance across 20+ live CCTV streams on an NVIDIA DGX A100 using MIG partitions; &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift. A collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. Also: PostgreSQL, FastAPI, Kafka feedback, DVC-versioned datasets.
                            </p>
                         </div>
                      </div>

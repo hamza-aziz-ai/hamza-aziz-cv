@@ -182,8 +182,8 @@ body.dark-theme {
   min-width: 0;
 }
 
-/* Multi-line body text only: summary, work and project descriptions */
-.about__container p,
+/* Work and project descriptions only: justified text needs the wide column.
+   The summary stays left-aligned; in the narrow left column justify opens wide gaps. */
 .cv__data p {
   text-align: justify;
   hyphens: auto;

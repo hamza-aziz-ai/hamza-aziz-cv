@@ -182,6 +182,13 @@ body.dark-theme {
   min-width: 0;
 }
 
+/* Multi-line body text only: summary, work and project descriptions */
+.about__container p,
+.cv__data p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .cv__button-link {
   width: max-content;
   color: var(--text-color);

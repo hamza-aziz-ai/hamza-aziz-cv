@@ -25,6 +25,7 @@ It is a single hand-written static page (HTML, CSS and vanilla JavaScript, no bu
 | `index.html` | The CV page |
 | `assets/css/`, `assets/js/`, `assets/img/`, `assets/pdf/` | Styles, script, images, CV PDF and education documents |
 | `sitemap.xml` | Sitemap for this project site |
+| `.github/workflows/ci.yml` | On every pull request to `main`: runs `.github/scripts/check_site.py` (HTML balance, local assets, sitemap XML) and `node --check`, then merges the PR once they pass |
 | `.github/workflows/sitemap.yml` | Sets the sitemap `<lastmod>` from git history and resubmits the sitemap to Search Console on push |
 | `_redirects` | Redirects the old Netlify mirror to the canonical URL |
 
@@ -34,6 +35,8 @@ It is a single hand-written static page (HTML, CSS and vanilla JavaScript, no bu
 python -m http.server 8000
 # then open http://localhost:8000/
 ```
+
+Changes reach `main` only through a pull request; CI merges it when the checks pass. To run the same checks locally: `python .github/scripts/check_site.py` and `node --check assets/js/main.js`.
 
 Two things behave differently off the live domain: the Download CV button points to the PDF on hamzaaziz.dev, and the Google tag gateway path (`/iitk/`) does not exist locally, so the page falls back to loading the tag from googletagmanager.com.
 

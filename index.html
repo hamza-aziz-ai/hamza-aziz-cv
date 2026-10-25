@@ -143,9 +143,13 @@
                      AI ENGINEER
                   </p>
 
-                  <p class="home__info">
+                  <!-- assets/js/main.js shows the second line instead outside Gulf time zones. -->
+                  <p class="home__info" data-gulf-only>
                      Nationality: Indian | <strong>UAE</strong> employment visa sponsorship required | Notice period: 30 days<br>
                      Open to relocation: <strong>Abu Dhabi</strong> (preferred) and <strong>Dubai</strong>
+                  </p>
+                  <p class="home__info" data-outside-gulf hidden>
+                     Based in <strong>Ghaziabad, India</strong> | Notice period: 30 days
                   </p>
                </div>
             </section>
@@ -157,7 +161,7 @@
 
                   <div class="about__container grid">
                      <p>
-                        AI Engineer with 3+ years of experience in Computer Vision, Conversational/<wbr>Generative AI, full-stack LLM applications, and applied MLOps. Built production face recognition attendance systems (CCTV, PTZ classroom and edge variants) covering 20+ live CCTV streams with Kafka event streaming, on TensorRT + Milvus with automated nightly gallery updates. Currently maintaining a real-time, multi-tenant DriveThru voice ordering platform on FastAPI + Socket.IO over Google Gemini (2.63 s median reply over 17,884 turns, 4 POS integrations), alongside an earlier Rasa + Gemini voice assistant for a multi-institute college ERP. Comfortable shipping LLM applications end-to-end &mdash; FastAPI + Next.js services with rule-based and optional LLM narrators over OpenAI-compatible endpoints. Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments. Seeking applied AI engineering roles in Abu Dhabi or Dubai.
+                        AI Engineer with 3+ years of experience in Computer Vision, Conversational/<wbr>Generative AI, full-stack LLM applications, and applied MLOps. Built production face recognition attendance systems (CCTV, PTZ classroom and edge variants) covering 20+ live CCTV streams with Kafka event streaming, on TensorRT + Milvus with automated nightly gallery updates. Currently maintaining a real-time, multi-tenant DriveThru voice ordering platform on FastAPI + Socket.IO over Google Gemini (2.63 s median reply over 17,884 turns, 4 POS integrations), alongside an earlier Rasa + Gemini voice assistant for a multi-institute college ERP. Comfortable shipping LLM applications end-to-end &mdash; FastAPI + Next.js services with rule-based and optional LLM narrators over OpenAI-compatible endpoints. Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments.<span data-gulf-only> Seeking applied AI engineering roles in Abu Dhabi or Dubai.</span>
                      </p>
 
                      <ul class="about__social">

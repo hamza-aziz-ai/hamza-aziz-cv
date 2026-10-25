@@ -74,13 +74,16 @@ document.addEventListener('click', e => {
 })
 
 /*=============== CV BY REGION ===============*/
-// Download CV links the UAE CV by default (crawlers, no JS, unknown zone).
-// Outside Gulf time zones it links the AI Engineer resume instead, as on
-// hamzaaziz.dev (DECISIONS.md D-018 in that repo).
+// The page is the UAE version by default (crawlers, no JS, unknown zone).
+// Outside Gulf time zones Download CV links the AI Engineer resume, as on
+// hamzaaziz.dev (DECISIONS.md D-018 in that repo), and the UAE-only lines
+// (visa, relocation, Abu Dhabi or Dubai) give way to the resume's framing.
 const gulfZones = ['Asia/Dubai', 'Asia/Muscat', 'Asia/Qatar', 'Asia/Bahrain', 'Asia/Kuwait', 'Asia/Riyadh'],
     cvDownload = document.querySelector('[data-cv-download]')
 let visitorZone = ''
 try { visitorZone = Intl.DateTimeFormat().resolvedOptions().timeZone || '' } catch { }
 if (cvDownload && visitorZone && !gulfZones.includes(visitorZone)) {
     cvDownload.setAttribute('href', 'https://hamzaaziz.dev/assets/pdf/Hamza_Aziz_AI_Engineer_Resume.pdf')
+    document.querySelectorAll('[data-gulf-only]').forEach(el => { el.hidden = true })
+    document.querySelectorAll('[data-outside-gulf]').forEach(el => { el.hidden = false })
 }

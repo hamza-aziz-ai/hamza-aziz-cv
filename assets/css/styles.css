@@ -353,6 +353,11 @@ body.dark-theme {
   font-weight: var(--font-semi-bold);
 }
 
+.home__info a {
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+}
+
 .home__blob {
   position: relative;
   justify-self: center;

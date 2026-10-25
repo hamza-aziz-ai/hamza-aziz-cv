@@ -38,8 +38,7 @@ jobs:
     permissions:
       contents: write        # merge into main
       pull-requests: write   # merge the PR and delete its branch
-      actions: write         # start the sitemap workflow
-      pages: write           # request a Pages build
+      actions: write         # start the deploy workflow
     env:
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
@@ -52,9 +51,6 @@ jobs:
           --match-head-commit ${{ github.event.pull_request.head.sha }}
 
       # A merge made with GITHUB_TOKEN raises no push event, so start the
-      # push-to-main work by hand: sitemap freshness and a Pages build.
-      - name: Run the sitemap workflow on main
-        run: gh workflow run sitemap.yml --repo "$REPO" --ref main
-
-      - name: Request a Pages build
-        run: gh api -X POST "repos/$REPO/pages/builds"
+      # push-to-main deploy by hand.
+      - name: Deploy main
+        run: gh workflow run deploy.yml --repo "$REPO" --ref main

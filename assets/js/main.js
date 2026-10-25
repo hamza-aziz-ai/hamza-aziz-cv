@@ -59,12 +59,28 @@ themeButton.addEventListener('click', () => {
 })
 
 /*=============== GA4: CV DOWNLOAD EVENT ===============*/
-// Any link to the CV PDF (local or root copy) counts; marksheet PDFs do not.
+// Any link to the UAE CV or the AI Engineer resume PDF (local or root copy)
+// counts, with cv_version saying which; marksheet PDFs do not.
 // Guarded so the page still works when analytics is blocked.
 document.addEventListener('click', e => {
     const a = e.target.closest('a[href]')
     if (!a || typeof gtag !== 'function') return
     let u
     try { u = new URL(a.href, location.href) } catch { return }
-    if (u.pathname.endsWith('/Hamza_Aziz_CV_UAE.pdf')) gtag('event', 'cv_download', { link_location: 'cv_page' })
+    const version = u.pathname.endsWith('/Hamza_Aziz_CV_UAE.pdf') ? 'uae_cv'
+        : u.pathname.endsWith('/Hamza_Aziz_AI_Engineer_Resume.pdf') ? 'resume'
+        : null
+    if (version) gtag('event', 'cv_download', { link_location: 'cv_page', cv_version: version })
 })
+
+/*=============== CV BY REGION ===============*/
+// Download CV links the UAE CV by default (crawlers, no JS, unknown zone).
+// Outside Gulf time zones it links the AI Engineer resume instead, as on
+// hamzaaziz.dev (DECISIONS.md D-018 in that repo).
+const gulfZones = ['Asia/Dubai', 'Asia/Muscat', 'Asia/Qatar', 'Asia/Bahrain', 'Asia/Kuwait', 'Asia/Riyadh'],
+    cvDownload = document.querySelector('[data-cv-download]')
+let visitorZone = ''
+try { visitorZone = Intl.DateTimeFormat().resolvedOptions().timeZone || '' } catch { }
+if (cvDownload && visitorZone && !gulfZones.includes(visitorZone)) {
+    cvDownload.setAttribute('href', 'https://hamzaaziz.dev/assets/pdf/Hamza_Aziz_AI_Engineer_Resume.pdf')
+}

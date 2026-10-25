@@ -1,0 +1,60 @@
+# Every change reaches main through a pull request: run the checks, then
+# merge the PR here once they all pass. Branch protection is unavailable on
+# this plan, so the `needs:` below is what makes the checks binding.
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+# A newer push to the same PR replaces the older run.
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: HTML balance, local assets, sitemap XML
+        run: python3 .github/scripts/check_site.py
+
+      - name: JavaScript syntax
+        run: for f in assets/js/*.js; do node --check "$f" || exit 1; done
+
+  merge:
+    needs: [checks]
+    # Same-repo, non-draft PRs only: a fork's PR never merges itself.
+    if: github.event.pull_request.head.repo.full_name == github.repository && !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write        # merge into main
+      pull-requests: write   # merge the PR and delete its branch
+      actions: write         # start the sitemap workflow
+      pages: write           # request a Pages build
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      # --match-head-commit refuses to merge anything pushed after these checks ran.
+      - name: Merge the PR
+        run: >
+          gh pr merge ${{ github.event.pull_request.number }} --repo "$REPO"
+          --rebase --delete-branch
+          --match-head-commit ${{ github.event.pull_request.head.sha }}
+
+      # A merge made with GITHUB_TOKEN raises no push event, so start the
+      # push-to-main work by hand: sitemap freshness and a Pages build.
+      - name: Run the sitemap workflow on main
+        run: gh workflow run sitemap.yml --repo "$REPO" --ref main
+
+      - name: Request a Pages build
+        run: gh api -X POST "repos/$REPO/pages/builds"

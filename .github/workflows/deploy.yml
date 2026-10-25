@@ -50,7 +50,7 @@ jobs:
       - name: Stage the site files
         run: |
           mkdir _site
-          cp -r index.html sitemap.xml assets _site/
+          cp -r index.html 404.html sitemap.xml assets _site/
 
       - uses: actions/upload-pages-artifact@v3
         with:

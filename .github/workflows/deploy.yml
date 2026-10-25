@@ -44,10 +44,17 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      # The repo root as-is; upload-pages-artifact leaves out .git and .github.
+      # Publish only the site's own files. An allowlist, so README.md,
+      # .gitignore, _redirects and any future repo file stay unpublished;
+      # a new top-level page or folder must be added here.
+      - name: Stage the site files
+        run: |
+          mkdir _site
+          cp -r index.html sitemap.xml assets _site/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -488,7 +488,7 @@
                            <span>Open-Source / Personal Project</span>
 
                            <p>
-                              Open-source MCP server and plugin (Claude Code, Codex, Claude Desktop, ChatGPT app) that has ChatGPT (via the Codex CLI) and Claude (via Claude Code) answer a question independently, then debate in lock-step rounds until both agree; one writes the final answer, the other verifies it. Zero-dependency Node.js; 8 MCP tools with output schemas; remote sessions over SSH; 100 automated tests on Windows/macOS/Linux CI; tokenless OIDC releases to npm, MCP Registry and Smithery.
+                              Open-source MCP server and plugin (Claude Code, Codex, Claude Desktop, ChatGPT app) that has ChatGPT (via the Codex CLI) and Claude (via Claude Code) answer a question independently, then debate in lock-step rounds until both agree; one writes the final answer, the other verifies it. Each side runs through its CLI (Codex, Claude Code) on the user's own plan by default or on that side's API key, or, with no CLI installed, through the OpenAI Responses or Anthropic Messages API with read-only project tools and web search. Node.js; 8 MCP tools plus prompts and resources; remote sessions over SSH; Streamable HTTP over a Cloudflare tunnel; multi-arch Docker image on GHCR and Docker Hub; 118 automated tests on Windows/macOS/Linux CI; tokenless OIDC releases to npm, MCP Registry and Smithery.
                            </p>
 
                            <a href="https://github.com/hamza-aziz-ai/codex-claude-council" target="_blank" class="cv__button-link">

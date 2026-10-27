@@ -58,9 +58,11 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
-/*=============== GA4: CV DOWNLOAD EVENT ===============*/
+/*=============== GA4: CV DOWNLOAD AND CONTACT EVENTS ===============*/
 // Any link to the UAE CV or the AI Engineer resume PDF (local or root copy)
 // counts, with cv_version saying which; marksheet PDFs do not.
+// Email, phone and WhatsApp links send contact_click with the method, as on
+// hamzaaziz.dev (D-026 in that repo); generate_lead stays for sent forms.
 // Guarded so the page still works when analytics is blocked.
 document.addEventListener('click', e => {
     const a = e.target.closest('a[href]')
@@ -71,6 +73,11 @@ document.addEventListener('click', e => {
         : u.pathname.endsWith('/Hamza_Aziz_AI_Engineer_Resume.pdf') ? 'resume'
         : null
     if (version) gtag('event', 'cv_download', { link_location: 'cv_page', cv_version: version })
+    const method = u.protocol === 'mailto:' ? 'email'
+        : u.protocol === 'tel:' ? 'phone'
+        : u.hostname === 'wa.me' ? 'whatsapp'
+        : null
+    if (method) gtag('event', 'contact_click', { method, link_location: 'cv_page' })
 })
 
 /*=============== CV BY REGION ===============*/

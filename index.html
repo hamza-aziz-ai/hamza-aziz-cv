@@ -474,11 +474,15 @@
                            <span>Personal Project</span>
 
                            <p>
-                              Built a FastAPI (34 endpoints) + Next.js 14/TypeScript + PostgreSQL platform that screens BSE-listed Indian equities on five AAOIFI-inspired ratios (debt, cash, non-permissible income, receivables, liquid assets). Added a rule-based &ldquo;Explain Why&rdquo; narrator with an optional OpenAI-compatible LLM mode behind a config flag and fallback to the rules on error. Found and fixed a verdict defect where partial data screened as compliant: the engine now owns a three-state verdict (compliant / non-compliant / insufficient data), with exact decimal thresholds and golden-set tests. Dockerised ingestion and evaluation workers crawl BSE announcements, parse PDF/XBRL financials, pull market data, and refresh verdicts on a schedule. Hardened auth (PBKDF2, hashed sessions, rate limiting, Google SSO), Razorpay billing, and CI/CD with GitHub Actions checks (backend, UI, secret scan), a protected main branch, Dependabot and release-please; cut dependencies from 103 to 47 locked packages.
+                              Built and shipped a FastAPI (39 endpoints) + Next.js 16/TypeScript + PostgreSQL platform, live at halallens.in, that screens Indian equities on five AAOIFI-inspired ratios (debt, cash, non-permissible income, receivables, liquid assets) with a three-state verdict (compliant / non-compliant / insufficient data), after finding and fixing a defect where partial data screened as compliant. Rule-based &ldquo;Explain Why&rdquo; narrator with an optional, config-flagged LLM mode. Runs on an Oracle Cloud arm64 VM behind a Cloudflare Tunnel, deployed from release tags with health checks, nightly PostgreSQL backups to Cloudflare R2 and uptime monitoring. Release-please releases; required CI with native amd64/arm64 Docker builds; multi-arch images on Docker Hub and GHCR published only after tests, smoke tests and a Trivy critical-CVE gate, with SBOM and provenance. Hardened auth: PBKDF2, email-verified sign-up and password reset (SPF/DKIM/DMARC), Google OAuth with explicit account linking, and a Postgres row lock that closes a reset-vs-login race.
                            </p>
 
                            <a href="https://github.com/hamza-aziz-ai/HalalLens" target="_blank" class="cv__button-link">
                               View HalalLens on GitHub <i class="ri-external-link-line"></i>
+                           </a>
+
+                           <a href="https://halallens.in/" target="_blank" class="cv__button-link">
+                              Visit halallens.in <i class="ri-external-link-line"></i>
                            </a>
                         </div>
                      </div>

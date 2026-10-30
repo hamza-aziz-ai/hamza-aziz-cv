@@ -38,6 +38,20 @@
                   "https://www.linkedin.com/in/hamza-aziz-ai/",
                   "https://medium.com/@hamzaziizzz"
                ]
+            },
+            "hasPart": {
+               "@type": "SoftwareApplication",
+               "name": "HalalLens - The Shariah Compliance Screener",
+               "url": "https://halallens.in/",
+               "applicationCategory": "FinanceApplication",
+               "operatingSystem": "Web",
+               "description": "Shariah compliance screener for halal stock screening of BSE-listed Indian equities on five AAOIFI-inspired ratios.",
+               "author": { "@id": "https://hamzaaziz.dev/#person" },
+               "isBasedOn": {
+                  "@type": "SoftwareSourceCode",
+                  "codeRepository": "https://github.com/hamza-aziz-ai/HalalLens",
+                  "license": "https://opensource.org/licenses/MIT"
+               }
             }
          }
       </script>
@@ -467,14 +481,14 @@
 
                      <div>
                         <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> HalalLens &mdash; Shariah-Compliance Research Platform
+                           <i class="ri-arrow-drop-right-line"></i> HalalLens - The Shariah Compliance Screener
                         </h3>
 
                         <div class="cv__data">
                            <span>Personal Project</span>
 
                            <p>
-                              Built and shipped a FastAPI (44 endpoints) + Next.js 16/TypeScript + PostgreSQL 17 platform, live at halallens.in, that screens BSE-listed equities on five AAOIFI-inspired ratios (debt, cash, non-permissible income, receivables, liquid assets) with a three-state verdict (compliant / non-compliant / insufficient data). Every verdict publishes through one locked transaction, so a known data-quality issue never surfaces as compliant or non-compliant, and unmapped statement inputs stay missing rather than guessed. Rule-based &ldquo;Explain Why&rdquo; narrator with an optional, config-flagged LLM mode. Runs on an Oracle Cloud arm64 VM behind a Cloudflare Tunnel, deployed with Docker Compose from release-please releases, with nightly backups to Cloudflare R2, uptime monitoring and a self-clearing maintenance page; upgraded production PostgreSQL 14 to 17 in about 3 minutes of downtime with a scripted rollback. Razorpay billing (test mode) with a grant ledger, idempotent webhooks, payment-scoped refunds and a reconciler for missed webhooks and duplicate payments; compliance-change alert emails through an at-least-once outbox with a single sender under an advisory lock. CI runs 1092 backend and 47 UI tests and publishes multi-arch Docker images only after smoke tests and a Trivy critical-CVE gate. Hardened auth: email-verified sign-up and reset, Google OAuth with explicit account linking, and a row lock that closes a reset-vs-login race. Each design is documented in a decision record.
+                              Built and shipped HalalLens, a Shariah compliance screener for halal (Islamic) stock screening of BSE-listed Indian equities, live at halallens.in: a FastAPI (44 endpoints) + Next.js 16/TypeScript + PostgreSQL 17 platform that checks five AAOIFI-inspired ratios (debt, cash, non-permissible income, receivables, liquid assets) with a three-state verdict (compliant / non-compliant / insufficient data). Every verdict publishes through one locked transaction, so a known data-quality issue never surfaces as compliant or non-compliant, and unmapped statement inputs stay missing rather than guessed. Rule-based &ldquo;Explain Why&rdquo; narrator with an optional, config-flagged LLM mode. Runs on an Oracle Cloud arm64 VM behind a Cloudflare Tunnel, deployed with Docker Compose from release-please releases, with nightly backups to Cloudflare R2, uptime monitoring and a self-clearing maintenance page; upgraded production PostgreSQL 14 to 17 in about 3 minutes of downtime with a scripted rollback. Razorpay billing (test mode) with a grant ledger, idempotent webhooks, payment-scoped refunds and a reconciler for missed webhooks and duplicate payments; compliance-change alert emails through an at-least-once outbox with a single sender under an advisory lock. CI runs 1092 backend and 47 UI tests and publishes multi-arch Docker images only after smoke tests and a Trivy critical-CVE gate. Hardened auth: email-verified sign-up and reset, Google OAuth with explicit account linking, and a row lock that closes a reset-vs-login race. Each design is documented in a decision record.
                            </p>
 
                            <a href="https://github.com/hamza-aziz-ai/HalalLens" target="_blank" class="cv__button-link">

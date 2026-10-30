@@ -521,6 +521,28 @@
 
                      <div>
                         <h3 class="cv__title">
+                           <i class="ri-arrow-drop-right-line"></i> Mr. Healthcare - The Medical ChatBot
+                        </h3>
+
+                        <div class="cv__data">
+                           <span>B.Tech Final-Year Project (with Mahak Agrawal)</span>
+
+                           <p>
+                              A medical question-answering chatbot whose every answer comes from a Neo4j knowledge graph built from a disease dataset of 658 diseases (symptoms, causes, prevention, treatments, complications, descriptions); questions it cannot answer get an explicit &ldquo;I don't know&rdquo;. A language model may help read a question but never writes the answer. Vue 3 + Vite frontend and Flask API (gunicorn), shipped as Docker images on GHCR and Docker Hub behind nginx; GitHub Actions CI with an evaluation gate before every release, and self-updating deploys with automatic rollback on an Oracle Cloud VM behind a Cloudflare Tunnel. Not medical advice.
+                           </p>
+
+                           <a href="https://github.com/hamza-aziz-ai/Medical-ChatBot" target="_blank" class="cv__button-link">
+                              View Mr. Healthcare on GitHub <i class="ri-external-link-line"></i>
+                           </a>
+
+                           <a href="https://medical.hamzaaziz.dev/" target="_blank" class="cv__button-link">
+                              Visit medical.hamzaaziz.dev <i class="ri-external-link-line"></i>
+                           </a>
+                        </div>
+                     </div>
+
+                     <div>
+                        <h3 class="cv__title">
                            <i class="ri-arrow-drop-right-line"></i> Voice Assistant for College ERP (Natural Language to ERP Queries)
                         </h3>
 
@@ -535,28 +557,14 @@
 
                      <div>
                         <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> CCTV Face Recognition Attendance System
+                           <i class="ri-arrow-drop-right-line"></i> Face Recognition Attendance System (CCTV and PTZ Classroom)
                         </h3>
 
                         <div class="cv__data">
                            <span>Global InfoVentures Pvt. Ltd.</span>
 
                            <p>
-                              Real-time attendance across 20+ live CCTV streams on an NVIDIA DGX A100 using MIG partitions; &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift. A collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. Also: PostgreSQL, FastAPI, Kafka feedback, DVC-versioned datasets.
-                           </p>
-                        </div>
-                     </div>
-
-                     <div>
-                        <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> PTZ Classroom Attendance System
-                        </h3>
-
-                        <div class="cv__data">
-                           <span>Global InfoVentures Pvt. Ltd.</span>
-
-                           <p>
-                              Built a Dockerised attendance system in which one PTZ camera per classroom sweeps up to 23 ONVIF presets over RTSP, with dedicated faculty captures at lecture start and end. Frames go to a TensorRT-backed InsightFace-REST service for embeddings, and identities are matched by vector search in Milvus. A YOLOv9 service estimates headcount. FastAPI services write lecture-wise attendance into year-partitioned PostgreSQL tables. An APScheduler job syncs attendance to the institute ERP every 5 minutes, across 8 lecture slots per day.
+                              Built real-time attendance on two camera setups sharing one recognition stack. CCTV: 20+ live streams on an NVIDIA DGX A100 using MIG partitions, with &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift; a collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. PTZ classroom: one PTZ camera per classroom sweeps up to 23 ONVIF presets over RTSP, with dedicated faculty captures at lecture start and end; a YOLOv9 service estimates headcount, FastAPI services write lecture-wise attendance into year-partitioned PostgreSQL tables, and an APScheduler job syncs to the institute ERP every 5 minutes across 8 lecture slots per day. Also: Docker, Kafka feedback, DVC-versioned datasets.
                            </p>
                         </div>
                      </div>

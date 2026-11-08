@@ -159,7 +159,7 @@
 
                   <!-- assets/js/main.js shows the second line instead outside Gulf time zones. -->
                   <p class="home__info" data-gulf-only>
-                     Nationality: Indian | <strong>UAE</strong> employment visa sponsorship required | Notice period: 30 days<br>
+                     Nationality: Indian | Notice period: 30 days<br>
                      Open to relocation: <strong>Abu Dhabi</strong> (preferred) and <strong>Dubai</strong>
                   </p>
                   <p class="home__info" data-outside-gulf hidden>
@@ -176,7 +176,7 @@
 
                   <div class="about__container grid">
                      <p>
-                        AI Engineer with 3+ years of experience in Computer Vision, Conversational/<wbr>Generative AI, full-stack LLM applications, and applied MLOps. Built production face recognition attendance systems (CCTV, PTZ classroom and edge variants) covering 20+ live CCTV streams with Kafka event streaming, on TensorRT + Milvus with automated nightly gallery updates. Currently maintaining a real-time, multi-tenant DriveThru voice ordering platform on FastAPI + Socket.IO over Google Gemini (2.63 s median reply over 17,884 turns, 4 POS integrations), alongside earlier team work on a Rasa + Gemini voice assistant for a multi-institute college ERP. Comfortable shipping LLM applications end-to-end &mdash; FastAPI + Next.js services with rule-based and optional LLM narrators over OpenAI-compatible endpoints. Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments.<span data-gulf-only> Seeking applied AI engineering roles in Abu Dhabi or Dubai.</span>
+                        AI Engineer with 3+ years building production AI that is safe to run on real customers: voice agents, LLM systems and GPU computer vision. The model handles language; deterministic code owns everything that touches money, data or users. Helped lift live drive-thru ordering success from ~25&ndash;30% to 60%+ on a real-time, multi-tenant Gemini voice-ordering platform across 4 POS integrations; built face recognition on 20+ live CCTV streams at &gt;99.99% accuracy in controlled UAT, with nightly gallery updates lifting real-world accuracy from 85% to 99%; shipped 2 live products (halallens.in, medical.hamzaaziz.dev). Proficient in GPU inference (Triton, TensorRT, MIG) and CI/CD deployments.<span data-gulf-only> Seeking applied AI engineering roles in Abu Dhabi or Dubai.</span>
                      </p>
 
                      <ul class="about__social">
@@ -481,6 +481,28 @@
 
                      <div>
                         <h3 class="cv__title">
+                           <i class="ri-arrow-drop-right-line"></i> Mr. Healthcare - The Medical ChatBot
+                        </h3>
+
+                        <div class="cv__data">
+                           <span>B.Tech Final-Year Project (with <a href="https://www.linkedin.com/in/mahak-agrawalo3/" target="_blank" class="cv__button-link">Mahak Agrawal</a>)</span>
+
+                           <p>
+                              A medical question-answering chatbot whose every answer comes from a Neo4j knowledge graph built from a disease dataset of 658 diseases (symptoms, causes, prevention, treatments, complications, descriptions); questions it cannot answer get an explicit &ldquo;I don't know&rdquo;. Lifted complete understanding of paraphrases and follow-ups from 54.7% to 70.9% with no new wrong-subject answers. A language model may help read a question but never writes the answer. Vue 3 + Vite frontend and Flask API (gunicorn), shipped as Docker images on GHCR and Docker Hub behind nginx; GitHub Actions CI with an evaluation gate before every release, and self-updating deploys with automatic rollback on an Oracle Cloud VM behind a Cloudflare Tunnel.
+                           </p>
+
+                           <a href="https://github.com/hamza-aziz-ai/Medical-ChatBot" target="_blank" class="cv__button-link">
+                              View Mr. Healthcare on GitHub <i class="ri-external-link-line"></i>
+                           </a>
+
+                           <a href="https://medical.hamzaaziz.dev/" target="_blank" class="cv__button-link">
+                              Visit medical.hamzaaziz.dev <i class="ri-external-link-line"></i>
+                           </a>
+                        </div>
+                     </div>
+
+                     <div>
+                        <h3 class="cv__title">
                            <i class="ri-arrow-drop-right-line"></i> HalalLens - The Shariah Compliance Screener
                         </h3>
 
@@ -510,48 +532,12 @@
                            <span>Open-Source / Personal Project</span>
 
                            <p>
-                              Open-source MCP server and plugin (Claude Code, Codex, Claude Desktop, ChatGPT app) that has ChatGPT (via the Codex CLI) and Claude (via Claude Code) answer a question independently, then debate in lock-step rounds until both agree; one writes the final answer, the other verifies it. Each side runs through its CLI (Codex, Claude Code) on the user's own plan by default or on that side's API key, or, with no CLI installed, through the OpenAI Responses or Anthropic Messages API with read-only project tools and web search. Node.js; 8 MCP tools plus prompts and resources; remote sessions over SSH; Streamable HTTP over a Cloudflare tunnel; multi-arch Docker image on GHCR and Docker Hub; 118 automated tests on Windows/macOS/Linux CI; tokenless OIDC releases to npm and the MCP Registry.
+                              Open-source MCP server and plugin (Claude Code, Codex, Claude Desktop, ChatGPT app) that has ChatGPT (via the Codex CLI) and Claude (via Claude Code) answer a question independently, then debate in lock-step rounds until both agree; one writes the final answer, the other verifies it. Each side runs through its CLI (Codex, Claude Code) on the user's own plan by default or on that side's API key, or, with no CLI installed, through the OpenAI Responses or Anthropic Messages API with read-only project tools and web search. Node.js; 8 MCP tools plus prompts and resources; remote sessions over SSH; Streamable HTTP over a Cloudflare tunnel; multi-arch Docker image on GHCR and Docker Hub; 118 automated tests on Windows/macOS/Linux CI; tokenless OIDC releases to npm and the MCP Registry. Listed in the MCP Registry, Smithery and awesome-mcp-servers; scored 24/24 on its hard benchmark set.
                            </p>
 
                            <a href="https://github.com/hamza-aziz-ai/codex-claude-council" target="_blank" class="cv__button-link">
                               View Codex–Claude Council on GitHub <i class="ri-external-link-line"></i>
                            </a>
-                        </div>
-                     </div>
-
-                     <div>
-                        <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> Mr. Healthcare - The Medical ChatBot
-                        </h3>
-
-                        <div class="cv__data">
-                           <span>B.Tech Final-Year Project (with <a href="https://www.linkedin.com/in/mahak-agrawalo3/" target="_blank" class="cv__button-link">Mahak Agrawal</a>)</span>
-
-                           <p>
-                              A medical question-answering chatbot whose every answer comes from a Neo4j knowledge graph built from a disease dataset of 658 diseases (symptoms, causes, prevention, treatments, complications, descriptions); questions it cannot answer get an explicit &ldquo;I don't know&rdquo;. Lifted complete understanding of paraphrases and follow-ups from 54.7% to 70.9% with no new wrong-subject answers. A language model may help read a question but never writes the answer. Vue 3 + Vite frontend and Flask API (gunicorn), shipped as Docker images on GHCR and Docker Hub behind nginx; GitHub Actions CI with an evaluation gate before every release, and self-updating deploys with automatic rollback on an Oracle Cloud VM behind a Cloudflare Tunnel.
-                           </p>
-
-                           <a href="https://github.com/hamza-aziz-ai/Medical-ChatBot" target="_blank" class="cv__button-link">
-                              View Mr. Healthcare on GitHub <i class="ri-external-link-line"></i>
-                           </a>
-
-                           <a href="https://medical.hamzaaziz.dev/" target="_blank" class="cv__button-link">
-                              Visit medical.hamzaaziz.dev <i class="ri-external-link-line"></i>
-                           </a>
-                        </div>
-                     </div>
-
-                     <div>
-                        <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> Voice Assistant for College ERP (Natural Language to ERP Queries)
-                        </h3>
-
-                        <div class="cv__data">
-                           <span>Global InfoVentures Pvt. Ltd.</span>
-
-                           <p>
-                              Worked in the team that built a voice and text query assistant that answers natural-language questions over a multi-institute college ERP. A FastAPI backend transcribes speech via Google Speech-to-Text, routes queries to student, fee, employee or library modules with two Rasa DIET classifiers, and asks a clarifying question when confidence is low. Schema fields (100+ field-level mappings per module) and few-shot examples are retrieved from Milvus using MiniLM embeddings, improving SQL precision by 30%+, with vector-based field/value disambiguation adding 40%+. Gemini emits the query fields and conditions, the application builds the ERP payload rather than full SQL, and results are summarized into gTTS speech; near-100% intent classification accuracy.
-                           </p>
                         </div>
                      </div>
 
@@ -565,6 +551,20 @@
 
                            <p>
                               Built real-time attendance on two camera setups sharing one recognition stack. CCTV: 20+ live streams on an NVIDIA DGX A100 using MIG partitions, with &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift; a collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. PTZ classroom: one PTZ camera per classroom sweeps up to 23 ONVIF presets over RTSP, with dedicated faculty captures at lecture start and end; a YOLOv9 service estimates headcount, FastAPI services write lecture-wise attendance into year-partitioned PostgreSQL tables, and an APScheduler job syncs to the institute ERP every 5 minutes across 8 lecture slots per day. Also: Docker, Kafka feedback, DVC-versioned datasets.
+                           </p>
+                        </div>
+                     </div>
+
+                     <div>
+                        <h3 class="cv__title">
+                           <i class="ri-arrow-drop-right-line"></i> Voice Assistant for College ERP (Natural Language to ERP Queries)
+                        </h3>
+
+                        <div class="cv__data">
+                           <span>Global InfoVentures Pvt. Ltd.</span>
+
+                           <p>
+                              Worked in the team that built a voice and text query assistant that answers natural-language questions over a multi-institute college ERP. A FastAPI backend transcribes speech via Google Speech-to-Text, routes queries to student, fee, employee or library modules with two Rasa DIET classifiers, and asks a clarifying question when confidence is low. Schema fields (100+ field-level mappings per module) and few-shot examples are retrieved from Milvus using MiniLM embeddings, improving SQL precision by 30%+, with vector-based field/value disambiguation adding 40%+. Gemini emits the query fields and conditions, the application builds the ERP payload rather than full SQL, and results are summarized into gTTS speech; near-100% intent classification accuracy.
                            </p>
                         </div>
                      </div>

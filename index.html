@@ -507,15 +507,33 @@
 
                      <div>
                         <h3 class="cv__title">
-                           <i class="ri-arrow-drop-right-line"></i> Face Recognition Attendance System (CCTV and PTZ Classroom)
+                           <i class="ri-arrow-drop-right-line"></i> Face Recognition Attendance Platform (CCTV and PTZ Classroom)
                         </h3>
 
                         <div class="cv__data">
                            <span>Global InfoVentures Pvt. Ltd.</span>
 
                            <p>
-                              Built real-time attendance on two camera setups sharing one recognition stack. CCTV: 20+ live streams on an NVIDIA DGX A100 using MIG partitions, with &gt;99.99% accuracy against the attendance register in controlled UAT at the main and library gates. RTSP streams are batched into InsightFace-REST, which serves TensorRT SCRFD (scrfd_10g_gnkps) detection and w600k_r50 recognition as two replicas on separate MIG slices behind nginx. Dual Milvus collections pair the enrolled gallery with a CCTV-captured staging gallery to counter domain shift; a collector keeps each person's best faces, ranked by pupil distance and match score, and a nightly job refreshes the vector DB, raising real-world accuracy from 85% to 99%. PTZ classroom: one PTZ camera per classroom sweeps up to 23 ONVIF presets over RTSP, with dedicated faculty captures at lecture start and end; a YOLOv9 service estimates headcount, FastAPI services write lecture-wise attendance into year-partitioned PostgreSQL tables, and an APScheduler job syncs to the institute ERP every 5 minutes across 8 lecture slots per day. Also: Docker, Kafka feedback, DVC-versioned datasets.
+                              Built, as sole developer, face-recognition attendance on InsightFace-REST, TensorRT and Milvus. The CCTV deployment ran 20+ live streams on an NVIDIA DGX A100 with MIG partitions at &gt;99.99% accuracy against the attendance register in controlled UAT, for a 20-camera main gate averaging ~2,000 people a day; nightly gallery updates lifted real-world accuracy from 85% to 99%. The PTZ classroom deployment swept 23 ONVIF presets per camera with YOLOv9 headcounts and ERP sync. Since rebuilt as a multi-tenant platform: automated semver releases with pull-based deploys that roll back on their own, Nuitka-compiled images, an Android enrolment app (Kotlin, CameraX, consent-first, on-device quality checks), Kafka-fed live displays and a DeepStream tier tested at 16 &times; 1080p30 streams on a 6 GB laptop GPU.
                            </p>
+                        </div>
+                     </div>
+
+                     <div>
+                        <h3 class="cv__title">
+                           <i class="ri-arrow-drop-right-line"></i> Edge Vision Attendance Platform
+                        </h3>
+
+                        <div class="cv__data">
+                           <span>Personal Project</span>
+
+                           <p>
+                              C++ DeepStream 9 pipeline on a Jetson Orin Nano Super 8 GB: SCRFD-10G and ArcFace on TensorRT 10, GPU face alignment and NvDCF tracking. Measured on the board with the whole system running: 8 &times; 720p30 RTSP streams at 30 fps each in 5.0 GB RAM at 76% peak GPU; SCRFD 3.47 ms per frame, ArcFace 1.69 ms per face. An amd64 build serves as the central tier of the CCTV platform.
+                           </p>
+
+                           <a href="https://evap.hamzaaziz.dev/demo/" target="_blank" class="cv__button-link">
+                              View Edge Vision Attendance Platform live demo <i class="ri-external-link-line"></i>
+                           </a>
                         </div>
                      </div>
 
